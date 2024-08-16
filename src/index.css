@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900;1,100..900&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -8,9 +12,10 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-image: url(/src/assets/homepage.png);
+  background-image: url(/src/assets/homepage3.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  height: 100vh;
 }
