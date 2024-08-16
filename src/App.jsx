@@ -1,7 +1,11 @@
-import Logo from './components/Logo';
+import Home from './pages/Home/Home';
 
 function App() {
-  return <Logo></Logo>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 }
 
 export default App;
