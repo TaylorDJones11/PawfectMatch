@@ -1,4 +1,9 @@
 function Logo() {
-  return <div>Logo</div>;
+  return (
+    <div>
+      {' '}
+      <h1>Pawfect Match</h1>
+    </div>
+  );
 }
 export default Logo;

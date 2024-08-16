@@ -1,9 +1,7 @@
+import Logo from './components/Logo';
+
 function App() {
-  return (
-    <>
-      <h1>Pawfect Match</h1>
-    </>
-  );
+  return <Logo></Logo>;
 }
 
 export default App;
