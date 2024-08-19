@@ -1,8 +1,10 @@
+import pawfectMatch from '../assets/pawfectmatch.png';
+
 function Logo() {
   return (
-    <div className='text-3xl font-extrabold text-gray-800'>
+    <div className='h-44 w-44 m-0'>
       {' '}
-      <img src='../assets/pawfectmatch.png' alt='Logo' />
+      <img src={pawfectMatch} alt='Logo' />
     </div>
   );
 }
