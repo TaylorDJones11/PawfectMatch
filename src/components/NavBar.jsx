@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <nav className='gap-6'>
+    <nav className='flex gap-4'>
       <Link to='/adopt'>Adoption</Link>
       <Link to='/donate'>Donation</Link>
     </nav>
