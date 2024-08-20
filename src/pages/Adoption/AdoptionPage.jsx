@@ -1,4 +1,5 @@
 import NavbarContainer from '../../components/NavbarContainer';
+import CardContainer from '../../components/CardContainer';
 
 function AdoptionPage() {
   return (
@@ -7,7 +8,13 @@ function AdoptionPage() {
         <div>
           <NavbarContainer />
 
-          <h1>This is Adoption</h1>
+          <h1 className='mb-12 text-center text-2xl underline-offset-1 decoration-orange'>
+            Adoptable Animals
+          </h1>
+        </div>
+
+        <div>
+          <CardContainer />
         </div>
       </div>
     </>
