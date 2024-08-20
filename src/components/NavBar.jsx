@@ -16,7 +16,7 @@ function NavBar() {
         Donation
       </Link>
       <Link
-        to='/donate'
+        to='/about'
         className='hover:border-b-4 hover:border-orange transition-all duration-300'
       >
         About Us

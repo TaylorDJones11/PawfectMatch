@@ -2,7 +2,7 @@ import Logo from '../../components/Logo';
 import NavBar from '../../components/NavBar';
 import Button from '../../components/Button';
 
-function DonationPage() {
+function AboutUs() {
   return (
     <>
       <div className='flex items-center justify-between p-4'>
@@ -14,8 +14,8 @@ function DonationPage() {
         />
       </div>
 
-      <h1>This is Donations</h1>
+      <h1>This is About US</h1>
     </>
   );
 }
-export default DonationPage;
+export default AboutUs;
