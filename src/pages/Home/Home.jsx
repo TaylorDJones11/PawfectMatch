@@ -14,9 +14,9 @@ function Home() {
         />
       </div>
 
-      <div>
-        <h1 className='text-white text-3xl'>
-          Our four-legged friends need your help.
+      <div className='grid grid-cols-1 gap-2 ml-12 mt-64 justify-end'>
+        <h1 className='text-black text-6xl tracking-tight '>
+          Our four-legged friends <br /> need your help. <br />
         </h1>
         <Link to='/adoption'>
           <Button

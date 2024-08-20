@@ -10,12 +10,36 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   font-family: 'Nunito', sans-serif;
-  background-image: url(/src/assets/homepage3.png);
+  background-image: url(/src/assets/homepage1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
+} */
+
+body {
+  font-family: 'Nunito', sans-serif;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden; /* Ensure no scrollbars appear */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/src/assets/homepage1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.7; /* Adjust the opacity here */
+  z-index: -1; /* Keep the background behind content */
 }
