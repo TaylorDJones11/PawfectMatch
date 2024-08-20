@@ -20,7 +20,7 @@ function Home() {
         </h1>
         <Link to='/adoption'>
           <Button
-            className='bg-emerald text-black font-bold py-2 px-4 rounded hover:bg-blue-700'
+            className='bg-emerald text-black font-bold py-2 px-4 mt-2 rounded hover:bg-blue-700'
             child={'Adopt a Pet'}
           />
         </Link>

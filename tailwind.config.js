@@ -7,6 +7,7 @@ export default {
       transparent: 'transparent',
       current: 'currentColor',
       white: '#ffffff',
+      orange: '#f7941e',
       emerald: '#ddf1cf',
       midnight: '#121063',
       metal: '#565584',
