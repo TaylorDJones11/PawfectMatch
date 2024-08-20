@@ -10,7 +10,7 @@ export default {
       orange: '#f7941e',
       emerald: '#ddf1cf',
       midnight: '#121063',
-      metal: '#565584',
+      metal: '#6f899a',
       tahiti: '#3ab7bf',
       silver: '#ecebff',
       'bubble-gum': '#ff77e9',

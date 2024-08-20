@@ -3,9 +3,13 @@ import NavbarContainer from '../../components/NavbarContainer';
 function AdoptionPage() {
   return (
     <>
-      <NavbarContainer />
+      <div className='adoption-container h-screen'>
+        <div>
+          <NavbarContainer />
 
-      <h1>This is Adoption</h1>
+          <h1>This is Adoption</h1>
+        </div>
+      </div>
     </>
   );
 }
