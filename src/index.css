@@ -41,6 +41,8 @@ body {
   z-index: -1; /* Keep the background behind content */
 }
 
-.adoption-container {
+.adoption-container,
+.donation-container,
+.about-container {
   background-color: rgb(251, 248, 243);
 }

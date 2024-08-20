@@ -10,7 +10,7 @@ function Home() {
           <h1 className='text-black text-6xl tracking-tight '>
             Our four-legged friends <br /> need your help. <br />
           </h1>
-          <Link to='/adoption'>
+          <Link to='/adopt'>
             <Button
               className='bg-emerald text-black font-bold py-2 px-4 mt-2 rounded hover:bg-blue-700'
               child={'Adopt a Pet'}

@@ -3,9 +3,11 @@ import NavbarContainer from '../../components/NavbarContainer';
 function DonationPage() {
   return (
     <>
-      <NavbarContainer />
+      <div className='donation-container h-screen'>
+        <NavbarContainer />
 
-      <h1>This is Donations</h1>
+        <h1>This is Donations</h1>
+      </div>
     </>
   );
 }

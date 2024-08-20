@@ -3,9 +3,11 @@ import NavbarContainer from '../../components/NavbarContainer';
 function AboutUs() {
   return (
     <>
-      <NavbarContainer />
+      <div className='about-container h-screen'>
+        <NavbarContainer />
 
-      <h1>This is About US</h1>
+        <h1>This is About US</h1>
+      </div>
     </>
   );
 }

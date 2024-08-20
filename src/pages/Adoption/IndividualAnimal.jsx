@@ -1,4 +1,11 @@
+import NavbarContainer from '../../components/NavbarContainer';
+
 function IndividualAnimal() {
-  return <div>IndividualAnimal</div>;
+  return (
+    <>
+      <NavbarContainer />
+      <h1>Single Animal Profile</h1>
+    </>
+  );
 }
 export default IndividualAnimal;

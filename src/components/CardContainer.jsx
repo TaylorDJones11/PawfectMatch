@@ -11,42 +11,42 @@ function CardContainer() {
             imageSrc={picture}
             description='Description for card 1.'
             buttonText='Learn More'
-            buttonLink='/learn-more'
+            buttonLink='/animalid'
           />
           <Card
             title='Card 2'
             imageSrc={picture}
             description='Description for card 2.'
             buttonText='Learn More'
-            buttonLink='/learn-more'
+            buttonLink='/animalid'
           />
           <Card
             title='Card 3'
             imageSrc={picture}
             description='Description for card 3.'
             buttonText='Learn More'
-            buttonLink='/learn-more'
+            buttonLink='/animalid'
           />
           <Card
             title='Card 4'
             imageSrc={picture}
             description='Description for card 4.'
             buttonText='Learn More'
-            buttonLink='/learn-more'
+            buttonLink='/animalid'
           />
           <Card
             title='Card 5'
             imageSrc={picture}
             description='Description for card 5.'
             buttonText='Learn More'
-            buttonLink='/learn-more'
+            buttonLink='/animalid'
           />
           <Card
             title='Card 6'
             imageSrc={picture}
             description='Description for card 6.'
             buttonText='Learn More'
-            buttonLink='/learn-more'
+            buttonLink='/animalid'
           />
         </div>
       </div>
