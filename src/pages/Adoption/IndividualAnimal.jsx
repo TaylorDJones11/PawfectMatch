@@ -2,6 +2,7 @@ import NavbarContainer from '../../components/NavbarContainer';
 import AnimalProfile from '../../components/AnimalSingleProfile';
 
 import pic from '../../assets/cat.jpg';
+import Footer from '../../components/Footer';
 
 function IndividualAnimal() {
   return (
@@ -17,6 +18,7 @@ function IndividualAnimal() {
         gender='M'
         weight='12lbs'
       />
+      <Footer />
     </>
   );
 }

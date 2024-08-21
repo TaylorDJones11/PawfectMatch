@@ -1,4 +1,5 @@
 import NavbarContainer from '../../components/NavbarContainer';
+import Footer from '../../components/Footer';
 
 function DonationPage() {
   return (
@@ -7,6 +8,7 @@ function DonationPage() {
         <NavbarContainer />
 
         <h1>This is Donations</h1>
+        <Footer />
       </div>
     </>
   );

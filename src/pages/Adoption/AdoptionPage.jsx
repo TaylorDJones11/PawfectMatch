@@ -1,5 +1,6 @@
 import NavbarContainer from '../../components/NavbarContainer';
 import CardContainer from '../../components/CardContainer';
+import Footer from '../../components/Footer';
 
 function AdoptionPage() {
   return (
@@ -17,6 +18,7 @@ function AdoptionPage() {
           <CardContainer />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
