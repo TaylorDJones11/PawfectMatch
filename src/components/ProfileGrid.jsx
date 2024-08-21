@@ -1,25 +1,34 @@
 import ProfileCard from './ProfileCard';
+import imgOne from '../assets/profile.jpg';
+import imgTwo from '../assets/profile1.jpg';
+import imgThree from '../assets/profile2.jpg';
+import imgFour from '../assets/profile3.jpg';
 
 const profiles = [
   {
-    title: 'Alice',
-    imageSrc: 'path/to/alice.jpg',
+    title: 'Alice D.',
+    imageSrc: imgOne,
+    job: 'Manager',
     description: 'Alice loves animals and is a great volunteer.',
   },
   {
-    title: 'Bob',
-    imageSrc: 'path/to/bob.jpg',
-    description: 'Bob is dedicated to animal welfare and is a skilled foster.',
+    title: 'Charlee J.',
+    imageSrc: imgTwo,
+    job: 'Receptionist',
+    description:
+      'Charlee is dedicated to animal welfare and is a skilled foster.',
   },
   {
-    title: 'Charlie',
-    imageSrc: 'path/to/charlie.jpg',
-    description: 'Charlie is a passionate advocate for animal rights.',
+    title: 'Blair O.',
+    imageSrc: imgThree,
+    job: 'Vet',
+    description: 'Blair is a passionate advocate for animal rights.',
   },
   {
-    title: 'Diana',
-    imageSrc: 'path/to/diana.jpg',
-    description: 'Diana has been helping animals for over 10 years.',
+    title: 'Tim Z.',
+    imageSrc: imgFour,
+    job: 'Adoption Intake',
+    description: 'Tim has been helping animals for over 10 years.',
   },
   // Add more profiles as needed
 ];
@@ -32,6 +41,7 @@ function ProfileGrid() {
           <ProfileCard
             key={index}
             title={profile.title}
+            job={profile.job}
             imageSrc={profile.imageSrc}
             description={profile.description}
           />
