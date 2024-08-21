@@ -6,7 +6,7 @@ function AboutUs() {
       <div className='about-container h-screen'>
         <NavbarContainer />
 
-        <h1>This is About US</h1>
+        <h1>Meet Our Rescue Leaders</h1>
       </div>
     </>
   );

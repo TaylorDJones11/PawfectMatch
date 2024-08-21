@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Card({ title, imageSrc, description, buttonText, buttonLink }) {
   return (
     <div className='bg-white shadow-lg rounded-lg overflow-hidden'>
