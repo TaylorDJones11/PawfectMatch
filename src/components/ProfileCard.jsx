@@ -9,7 +9,7 @@ function ProfileCard({ title, job, imageSrc, description }) {
         />
       </div>
       <h2 className='text-xl font-bold mb-2'>{title}</h2>
-      <p className='text-md font-bold mb-2'>{job}</p>
+      <p className='text-md font-medium mb-2'>{job}</p>
       <p className='text-gray-700'>{description}</p>
     </div>
   );
