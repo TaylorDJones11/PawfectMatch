@@ -18,7 +18,9 @@ function AdoptionPage() {
           <CardContainer />
         </div>
       </div>
-      <Footer />
+      <div className='mt-64'>
+        <Footer />
+      </div>
     </>
   );
 }
