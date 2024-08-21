@@ -15,6 +15,7 @@ function AboutUs() {
         </div>
 
         <ProfileGrid />
+
         <Footer />
       </div>
     </>
