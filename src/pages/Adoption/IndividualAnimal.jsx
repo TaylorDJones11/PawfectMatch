@@ -1,10 +1,22 @@
 import NavbarContainer from '../../components/NavbarContainer';
+import AnimalProfile from '../../components/AnimalSingleProfile';
+
+import pic from '../../assets/cat.jpg';
 
 function IndividualAnimal() {
   return (
     <>
       <NavbarContainer />
-      <h1>Single Animal Profile</h1>
+
+      <AnimalProfile
+        title='Cosmo'
+        imageSrc={pic}
+        description='Here is the description'
+        breed='Tabby'
+        age='4'
+        gender='M'
+        weight='12lbs'
+      />
     </>
   );
 }
