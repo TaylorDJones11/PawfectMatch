@@ -1,5 +1,6 @@
 import NavbarContainer from '../../components/NavbarContainer';
 import Footer from '../../components/Footer';
+import DonationForm from '../../components/DonationForm';
 
 function DonationPage() {
   return (
@@ -7,7 +8,10 @@ function DonationPage() {
       <div className='donation-container h-screen'>
         <NavbarContainer />
 
-        <h1>This is Donations</h1>
+        <h1 className='text-center text-2xl mb-16'>
+          Give a little, help a lot—support our shelter!
+        </h1>
+        <DonationForm />
         <Footer />
       </div>
     </>
