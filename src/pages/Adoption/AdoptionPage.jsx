@@ -9,16 +9,18 @@ function AdoptionPage() {
         <div>
           <NavbarContainer />
 
-          <h1 className='mb-12 text-center text-2xl underline-offset-1 decoration-orange'>
-            Adoptable Animals
-          </h1>
+          <div className='text-center'>
+            <h1 className='mb-12 text-center text-2xl inline-block border-b-2 border-orange'>
+              Adoptable Animals
+            </h1>
+          </div>
         </div>
 
         <div>
           <CardContainer />
         </div>
       </div>
-      <div className='mt-64'>
+      <div className='mt-96'>
         <Footer />
       </div>
     </>

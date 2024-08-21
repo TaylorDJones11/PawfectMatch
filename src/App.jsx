@@ -4,6 +4,7 @@ import AdoptionPage from './pages/Adoption/AdoptionPage';
 import DonationPage from './pages/Donation/DonationPage';
 import AboutUs from './pages/Home/AboutUs';
 import IndividualAnimal from './pages/Adoption/IndividualAnimal';
+import Volunteer from './pages/Volunteer/Volunteer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/donate' element={<DonationPage />} />
         <Route path='/about' element={<AboutUs />} />
         <Route path='/animalid' element={<IndividualAnimal />} />
+        <Route path='/volunteer' element={<Volunteer />} />
       </Routes>
     </Router>
   );
