@@ -3,33 +3,37 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const conn = require('./db/conn');
-const petRoutes = require('./routes/pets');
-const Pet = require('./models/pet');
-const adoptablePets = require('./db/pet');
+const animalsRouter = require('./routes/animals'); // Assuming this handles fetching animal data
 
+// Initialize MongoDB connection
 conn();
 
 // MIDDLEWARE
-app.use(express.json());
+app.use(express.json()); // Parse JSON bodies
 
 // API ROUTES
-app.use('/api/adoptionpets', petRoutes);
+app.use('/api', animalsRouter); // Use animals router for API routes
 
 // Serve static files (e.g., your React app)
-app.use(express.static('public'));
+app.use(express.static('public')); // Serve your frontend from the 'public' directory
 
 // ROUTES
+// Basic welcome route
 app.get('/', (req, res) => {
-  res.send('Welcome to the Pet Adoption');
+  res.send('Welcome to the Pet Adoption Center!');
 });
 
-app.get('/seed', async (req, res) => {
+// Seed route for initializing database with predefined pets
+app.get('/animals', async (req, res) => {
   try {
-    await Pet.deleteMany({});
-    console.log('Cleared Pet collection.');
-    await Pet.create(adoptablePets);
+    const Animal = require('./models/Animal'); // Ensure this is only required where needed
+    const adoptablePets = require('./db/pet'); // Sample pets data
 
-    res.json(adoptablePets);
+    await Animal.deleteMany({}); // Clear the collection
+    console.log('Cleared Pet collection.');
+
+    const createdPets = await Animal.create(adoptablePets); // Seed the database with initial data
+    res.json(createdPets); // Return the created pets
   } catch (error) {
     console.error('Error loading seed data:', error);
     res
@@ -38,6 +42,7 @@ app.get('/seed', async (req, res) => {
   }
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
