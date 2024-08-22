@@ -1,7 +1,7 @@
 import ProfileCard from './ProfileCard';
 import imgOne from '../assets/profile.jpg';
 import imgTwo from '../assets/profile1.jpg';
-import imgThree from '../assets/profile2.jpg';
+import imgThree from '../assets/profile4.jpg';
 import imgFour from '../assets/profile3.jpg';
 
 const profiles = [
