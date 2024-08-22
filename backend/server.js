@@ -1,9 +1,13 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
 const conn = require('./db/conn');
-const animalsRouter = require('./routes/animals'); // Assuming this handles fetching animal data
+const animalsRouter = require('./routes/animals');
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Initialize MongoDB connection
 conn();
@@ -14,8 +18,8 @@ app.use(express.json()); // Parse JSON bodies
 // API ROUTES
 app.use('/api', animalsRouter); // Use animals router for API routes
 
-// Serve static files (e.g., your React app)
-app.use(express.static('public')); // Serve your frontend from the 'public' directory
+// Serve static files
+app.use('/public', express.static('public'));
 
 // ROUTES
 // Basic welcome route
@@ -23,10 +27,9 @@ app.get('/', (req, res) => {
   res.send('Welcome to the Pet Adoption Center!');
 });
 
-// Seed route for initializing database with predefined pets
 app.get('/animals', async (req, res) => {
   try {
-    const Animal = require('./models/Animal'); // Ensure this is only required where needed
+    const Animal = require('./models/Animal');
     const adoptablePets = require('./db/pet'); // Sample pets data
 
     await Animal.deleteMany({}); // Clear the collection

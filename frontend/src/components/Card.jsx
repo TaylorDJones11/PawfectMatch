@@ -9,6 +9,12 @@ function Card({ title, imageSrc, description, buttonText, buttonLink }) {
         <p className='text-gray-700 mb-4'>{description}</p>
         <a
           href={buttonLink}
+          className='inline-block px-6 py-2 bg-emerald mr-4  font-bold rounded hover:bg-emerald-600 transition duration-300'
+        >
+          {buttonText}
+        </a>
+        <a
+          href={buttonLink}
           className='inline-block px-6 py-2 bg-emerald  font-bold rounded hover:bg-emerald-600 transition duration-300'
         >
           {buttonText}
