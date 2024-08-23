@@ -2,31 +2,55 @@
   {
     "title": "Charlie",
     "imageSrc": "http://example.com/img/charlie.jpg",
-    "description": "Charlie is a cheerful little puppy who loves to play and cuddle."
+    "description": "Charlie is a cheerful little puppy who loves to play and cuddle.",
+    "breed": "Beagle",
+    "age": "2 years",
+    "gender": "Male",
+    "weight": "22 lbs"
   },
   {
     "title": "Bella",
     "imageSrc": "http://example.com/img/bella.jpg",
-    "description": "Bella is a gentle cat with a calm demeanor, looking for a quiet home."
+    "description": "Bella is a gentle cat with a calm demeanor, looking for a quiet home.",
+    "breed": "Siamese",
+    "age": "3 years",
+    "gender": "Female",
+    "weight": "15 lbs"
   },
   {
     "title": "Max",
     "imageSrc": "http://example.com/img/max.jpg",
-    "description": "Max is an energetic and playful kitten who loves to explore every corner."
+    "description": "Max is an energetic and playful kitten who loves to explore every corner.",
+    "breed": "Tabby",
+    "age": "1 year",
+    "gender": "Male",
+    "weight": "10 lbs"
   },
   {
     "title": "Lucy",
     "imageSrc": "http://example.com/img/lucy.jpg",
-    "description": "Lucy is a friendly rabbit known for her soft fur and friendly hops."
+    "description": "Lucy is a friendly rabbit known for her soft fur and friendly hops.",
+    "breed": "Angora",
+    "age": "4 years",
+    "gender": "Female",
+    "weight": "8 lbs"
   },
   {
     "title": "Buddy",
     "imageSrc": "http://example.com/img/buddy.jpg",
-    "description": "Buddy is a loyal dog with a protective nature and a big heart."
+    "description": "Buddy is a loyal dog with a protective nature and a big heart.",
+    "breed": "Golden Retriever",
+    "age": "5 years",
+    "gender": "Male",
+    "weight": "65 lbs"
   },
   {
     "title": "Sophie",
     "imageSrc": "http://example.com/img/sophie.jpg",
-    "description": "Sophie is a charming bird who loves to sing and interact with her owners."
+    "description": "Sophie is a charming bird who loves to sing and interact with her owners.",
+    "breed": "Parakeet",
+    "age": "2 years",
+    "gender": "Female",
+    "weight": "0.1 lbs"
   }
 ]

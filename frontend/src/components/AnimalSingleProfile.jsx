@@ -26,16 +26,16 @@ function AnimalProfile({
           <h2 className='text-2xl font-bold mb-2'>{title}</h2>
           <div className='flex gap-4'>
             <p className='text-gray-700 mb-4'>
-              <b>Breed:</b> {breed}
+              <b className='text-orange'>Breed:</b> {breed}
             </p>
             <p className='text-gray-700 mb-4'>
-              <b>Age:</b> {age}
+              <b className='text-orange'>Age:</b> {age}
             </p>
             <p className='text-gray-700 mb-4'>
-              <b>Gender:</b> {gender}
+              <b className='text-orange'>Gender:</b> {gender}
             </p>
             <p className='text-gray-700 mb-4'>
-              <b>Weight:</b> {weight}
+              <b className='text-orange'>Weight:</b> {weight}
             </p>
           </div>
           <p className='text-gray-700 mb-4'>{description}</p>
