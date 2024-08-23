@@ -6,10 +6,20 @@ function CardContainer() {
   const [animals, setAnimals] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3002/api/animals')
-      .then((response) => response.json())
-      .then((data) => setAnimals(data))
-      .catch((error) => console.error('Error fetching animals:', error));
+    const fetchAnimals = async () => {
+      try {
+        const response = await fetch('http://localhost:3002/api/animals');
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        setAnimals(data);
+      } catch (error) {
+        console.error('Error fetching animals:', error);
+      }
+    };
+
+    fetchAnimals();
   }, []);
 
   return (
