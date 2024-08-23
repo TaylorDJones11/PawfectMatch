@@ -22,8 +22,10 @@ function CardContainer() {
               title={animal.title}
               imageSrc={picture}
               description={animal.description}
-              buttonText='Adopt'
+              buttonText='Learn More'
+              adoptText='Adopt'
               buttonLink={`/animal/${animal._id}`}
+              adoptLink={`/adoptionform`}
             />
           ))}
         </div>

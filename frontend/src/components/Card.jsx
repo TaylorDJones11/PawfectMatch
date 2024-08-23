@@ -1,6 +1,12 @@
-import { Link } from 'react-router-dom';
-
-function Card({ title, imageSrc, description, buttonText, buttonLink }) {
+function Card({
+  title,
+  imageSrc,
+  description,
+  buttonText,
+  adoptText,
+  buttonLink,
+  adoptLink,
+}) {
   return (
     <div className='bg-white shadow-lg rounded-lg overflow-hidden'>
       <img src={imageSrc} alt={title} className='w-full h-48 object-cover' />
@@ -14,10 +20,10 @@ function Card({ title, imageSrc, description, buttonText, buttonLink }) {
           {buttonText}
         </a>
         <a
-          href={buttonLink}
+          href={adoptLink}
           className='inline-block px-6 py-2 bg-emerald  font-bold rounded hover:bg-emerald-600 transition duration-300'
         >
-          {buttonText}
+          {adoptText}
         </a>
       </div>
     </div>
