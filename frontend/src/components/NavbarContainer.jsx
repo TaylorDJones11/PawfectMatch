@@ -10,7 +10,7 @@ function NavbarContainer() {
         <Logo />
         <NavBar />
         <div>
-          <Link to='/admin/animals'>
+          <Link to='/login'>
             <Button
               className='bg-emerald text-black font-bold py-2 px-4 mr-2 rounded hover:bg-blue-700'
               child={'Admin'}

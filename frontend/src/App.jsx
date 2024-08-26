@@ -5,6 +5,7 @@ import DonationPage from './pages/Donation/DonationPage';
 import AboutUs from './pages/Home/AboutUs';
 import IndividualAnimal from './pages/Adoption/IndividualAnimal';
 import Volunteer from './pages/Volunteer/Volunteer';
+import Login from './pages/Login/Login';
 import AdminView from './pages/Admin/AdminView';
 import EditAnimal from './pages/Admin/EditAnimal';
 import NewAnimal from './pages/Admin/NewAnimal';
@@ -19,6 +20,7 @@ function App() {
         <Route path='/about' element={<AboutUs />} />
         <Route path='/animal/:id' element={<IndividualAnimal />} />
         <Route path='/volunteer' element={<Volunteer />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/admin/animals' element={<AdminView />} />
         <Route path='/admin/animals/edit/:id' element={<EditAnimal />} />
         <Route path='/admin/animals/new' element={<NewAnimal />} />

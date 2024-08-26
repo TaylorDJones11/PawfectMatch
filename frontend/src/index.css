@@ -43,6 +43,7 @@ body {
 
 .adoption-container,
 .donation-container,
-.about-container {
+.about-container,
+.login-container {
   background-color: rgb(251, 248, 243);
 }
