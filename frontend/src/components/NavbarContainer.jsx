@@ -9,12 +9,20 @@ function NavbarContainer() {
       <div className='flex items-center justify-between p-4'>
         <Logo />
         <NavBar />
-        <Link to='/volunteer'>
-          <Button
-            className='bg-emerald text-black font-bold py-2 px-4 rounded hover:bg-blue-700'
-            child={'Volunteer'}
-          />
-        </Link>
+        <div>
+          <Link to='/admin/animals'>
+            <Button
+              className='bg-emerald text-black font-bold py-2 px-4 mr-2 rounded hover:bg-blue-700'
+              child={'Admin'}
+            />
+          </Link>
+          <Link to='/volunteer'>
+            <Button
+              className='bg-emerald text-black font-bold py-2 px-4 rounded hover:bg-blue-700'
+              child={'Volunteer'}
+            />
+          </Link>
+        </div>
       </div>
     </>
   );
