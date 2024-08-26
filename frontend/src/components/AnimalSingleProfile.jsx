@@ -29,13 +29,13 @@ function AnimalProfile({
               <b className='text-orange'>Breed:</b> {breed}
             </p>
             <p className='text-gray-700 mb-4'>
-              <b className='text-orange'>Age:</b> {age}
+              <b className='text-orange'>Age:</b> {age} year(s)
             </p>
             <p className='text-gray-700 mb-4'>
               <b className='text-orange'>Gender:</b> {gender}
             </p>
             <p className='text-gray-700 mb-4'>
-              <b className='text-orange'>Weight:</b> {weight}
+              <b className='text-orange'>Weight:</b> {weight} lbs
             </p>
           </div>
           <p className='text-gray-700 mb-4'>{description}</p>

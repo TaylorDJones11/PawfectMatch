@@ -1,16 +1,37 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Username:', username);
-    console.log('Password:', password);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('token', data.token); // Store the JWT in localStorage
+        navigate('/admin/animals'); // Redirect to the admin page
+      } else {
+        const errorData = await response.json();
+        console.error('Login failed:', errorData.message);
+        alert('Login failed: ' + errorData.message);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('An error occurred during login. Please try again.');
+    }
   };
 
   return (
@@ -51,12 +72,11 @@ function Login() {
                 required
               />
             </div>
-            <Link to='/admin/animals'>
-              <Button
-                className='bg-emerald text-black font-bold py-2 px-8 mr-2 rounded hover:bg-blue-700'
-                child={'Login'}
-              />
-            </Link>
+            <Button
+              type='submit'
+              className='bg-emerald text-black font-bold py-2 px-8 mr-2 rounded hover:bg-blue-700'
+              child={'Login'}
+            />
           </form>
         </div>
       </div>
