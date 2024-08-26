@@ -23,6 +23,9 @@ function NewAnimal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Debugging: Log the animal object before sending
+    console.log('Submitting new animal:', animal);
+
     try {
       const response = await fetch('http://localhost:3002/api/animals', {
         method: 'POST',
@@ -33,6 +36,8 @@ function NewAnimal() {
       });
 
       if (!response.ok) {
+        const errorData = await response.json(); // Attempt to read the error message
+        console.error('Failed to add animal:', errorData);
         throw new Error('Failed to add animal');
       }
 
@@ -73,6 +78,17 @@ function NewAnimal() {
             type='text'
             name='age'
             value={animal.age}
+            onChange={handleChange}
+            className='w-full px-3 py-2 border rounded'
+            required
+          />
+        </div>
+        <div className='mb-4'>
+          <label className='block text-gray-700'>Gender</label>
+          <input
+            type='text'
+            name='gender'
+            value={animal.gender}
             onChange={handleChange}
             className='w-full px-3 py-2 border rounded'
             required

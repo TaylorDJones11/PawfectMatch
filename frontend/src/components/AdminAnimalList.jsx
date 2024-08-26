@@ -52,7 +52,7 @@ function AdminAnimalList() {
         </Link>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 '>
         {animals.map((animal) => (
           <div key={animal._id} className='bg-white p-4 rounded-lg shadow-md'>
             <h3 className='text-xl font-bold mb-2'>{animal.title}</h3>
@@ -79,7 +79,7 @@ function AdminAnimalList() {
               </Link>
               <button
                 onClick={() => deleteAnimal(animal._id)}
-                className='bg-red text-black hover:underline'
+                className='bg-red px-4 py-2 rounded text-black hover:underline'
               >
                 Delete
               </button>
