@@ -41,7 +41,13 @@ router.put('/animals/:id', async (req, res) => {
   try {
     const updatedAnimal = await Animal.findByIdAndUpdate(
       req.params.id,
-      req.body,
+      {
+        title: req.body.title,
+        description: req.body.description,
+        age: req.body.age,
+        weight: req.body.weight,
+        breed: req.body.breed,
+      },
       { new: true }
     );
     res.json(updatedAnimal);

@@ -2,10 +2,10 @@ import AdminAnimalList from '../../components/AdminAnimalList';
 
 function AdminView() {
   return (
-    <>
-      <h1>Admin</h1>
+    <div className='admin-view-container p-8 animal-container h-screen'>
+      <h1 className='text-3xl font-bold mb-6'>Admin Dashboard</h1>
       <AdminAnimalList />
-    </>
+    </div>
   );
 }
 export default AdminView;
