@@ -46,7 +46,7 @@ function AdminAnimalList() {
         <h2 className='text-2xl font-semibold'>Animal List</h2>
         <Link
           to='/admin/animals/new'
-          className='bg-blue-500 text-black px-4 py-2 rounded hover:bg-blue-700 transition duration-300'
+          className='bg-orange text-black  px-4 py-2 rounded  transition duration-300'
         >
           Add New Animal
         </Link>
@@ -57,16 +57,29 @@ function AdminAnimalList() {
           <div key={animal._id} className='bg-white p-4 rounded-lg shadow-md'>
             <h3 className='text-xl font-bold mb-2'>{animal.title}</h3>
             <p className='text-gray-700 mb-4'>{animal.description}</p>
+            <p className='text-gray-700 mb-4'>
+              <b>Breed:</b> {animal.breed}
+            </p>
+            <p className='text-gray-700 mb-4'>
+              <b>Weight:</b> {animal.weight}
+            </p>
+            <p className='text-gray-700 mb-4'>
+              <b>Age:</b> {animal.age}
+            </p>
+            <p className='text-gray-700 mb-4'>
+              <b>Gender:</b> {animal.gender}
+            </p>
             <div className='flex justify-between'>
               <Link
                 to={`/admin/animals/edit/${animal._id}`}
-                className='text-blue-500 hover:underline'
+                className='bg-emerald px-4 py-2 rounded text-black
+                 hover:underline'
               >
                 Edit
               </Link>
               <button
                 onClick={() => deleteAnimal(animal._id)}
-                className='text-red-500 hover:underline'
+                className='bg-red text-black hover:underline'
               >
                 Delete
               </button>
