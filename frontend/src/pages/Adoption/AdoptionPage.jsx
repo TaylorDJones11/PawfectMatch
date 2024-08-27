@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 function AdoptionPage() {
   return (
     <>
-      <div className='adoption-container h-screen'>
+      <div className='adoption-container f-screen'>
         <div>
           <NavbarContainer />
 
@@ -19,9 +19,9 @@ function AdoptionPage() {
         <div>
           <CardContainer />
         </div>
-      </div>
-      <div className='mt-96'>
-        <Footer />
+        <div>
+          <Footer />
+        </div>
       </div>
     </>
   );

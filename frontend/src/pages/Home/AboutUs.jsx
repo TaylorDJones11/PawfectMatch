@@ -5,7 +5,7 @@ import ProfileGrid from '../../components/ProfileGrid';
 function AboutUs() {
   return (
     <>
-      <div className='about-container h-screen'>
+      <div className='about-container f-screen'>
         <NavbarContainer />
 
         <div className='text-center mt-20'>

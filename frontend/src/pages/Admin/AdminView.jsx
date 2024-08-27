@@ -14,7 +14,7 @@ function AdminView() {
 
   return (
     <>
-      <div className='animal-container h-screen '>
+      <div className='animal-container f-screen '>
         <div className='flex justify-between items-center px-8 mb-24'>
           <Logo />
           <h1 className='text-3xl font-bold '>Admin Dashboard</h1>
