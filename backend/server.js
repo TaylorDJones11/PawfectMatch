@@ -7,8 +7,14 @@ const conn = require('./db/conn');
 const animalsRouter = require('./routes/animals');
 const authRoutes = require('./routes/auth');
 
-// Enable CORS for all routes
-app.use(cors());
+// CORS setup
+const corsOptions = {
+  origin: 'http://localhost:5173', // Your frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+app.use(cors(corsOptions));
 
 // Initialize MongoDB connection
 

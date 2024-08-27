@@ -1,28 +1,31 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const User = require('../models/User'); // Assuming you have a User model
+const User = require('../models/User');
 const router = express.Router();
 
+// Hard-coded credentials for testing
+const hardCodedUsername = 'admin';
+const hardCodedPassword = 'password123';
+
 // Login route
-router.post('/login', async (req, res) => {
+router.post('/login', (req, res) => {
   try {
     const { username, password } = req.body;
-    const user = await User.findOne({ username });
 
-    if (!user) {
+    // Check if the provided credentials match the hardcoded ones
+    if (username === hardCodedUsername && password === hardCodedPassword) {
+      // Generate a JWT
+      const token = jwt.sign({ username }, process.env.JWT_SECRET, {
+        expiresIn: '1h',
+      });
+
+      // Return the token to the client
+      return res.json({ token });
+    } else {
+      // If credentials are incorrect, return an error
       return res.status(401).json({ message: 'Invalid credentials' });
     }
-
-    const isMatch = await user.comparePassword(password);
-    if (!isMatch) {
-      return res.status(401).json({ message: 'Invalid credentials' });
-    }
-
-    const token = jwt.sign({ userId: user._id }, 'your_jwt_secret', {
-      expiresIn: '1h',
-    });
-    res.json({ token });
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
   }

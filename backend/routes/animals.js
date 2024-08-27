@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Animal = require('../models/Animal');
+const authenticateToken = require('../middleware/authenticateToken');
 
 // POST route to create a new animal
-router.post('/animals', async (req, res) => {
+router.post('/animals', authenticateToken, async (req, res) => {
   try {
     const newAnimal = new Animal(req.body);
     const savedAnimal = await newAnimal.save();
@@ -37,7 +38,7 @@ router.get('/animals/:id', async (req, res) => {
 });
 
 // PUT route to update an animal
-router.put('/animals/:id', async (req, res) => {
+router.put('/animals/:id', authenticateToken, async (req, res) => {
   try {
     const updatedAnimal = await Animal.findByIdAndUpdate(
       req.params.id,
@@ -57,7 +58,7 @@ router.put('/animals/:id', async (req, res) => {
 });
 
 // DELETE route to delete an animal
-router.delete('/animals/:id', async (req, res) => {
+router.delete('/animals/:id', authenticateToken, async (req, res) => {
   try {
     const deletedAnimal = await Animal.findByIdAndDelete(req.params.id);
     res.json(deletedAnimal);

@@ -9,6 +9,7 @@ import Login from './pages/Login/Login';
 import AdminView from './pages/Admin/AdminView';
 import EditAnimal from './pages/Admin/EditAnimal';
 import NewAnimal from './pages/Admin/NewAnimal';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -21,9 +22,30 @@ function App() {
         <Route path='/animal/:id' element={<IndividualAnimal />} />
         <Route path='/volunteer' element={<Volunteer />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/admin/animals' element={<AdminView />} />
-        <Route path='/admin/animals/edit/:id' element={<EditAnimal />} />
-        <Route path='/admin/animals/new' element={<NewAnimal />} />
+        <Route
+          path='/admin/animals'
+          element={
+            <ProtectedRoute>
+              <AdminView />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/admin/animals/edit/:id'
+          element={
+            <ProtectedRoute>
+              <EditAnimal />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/admin/animals/new'
+          element={
+            <ProtectedRoute>
+              <NewAnimal />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
   );

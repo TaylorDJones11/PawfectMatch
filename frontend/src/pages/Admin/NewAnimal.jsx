@@ -23,27 +23,32 @@ function NewAnimal() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Debugging: Log the animal object before sending
-    console.log('Submitting new animal:', animal);
-
     try {
+      const token = localStorage.getItem('token');
+
+      if (!token) {
+        throw new Error('No token found, please log in again.');
+      }
+
       const response = await fetch('http://localhost:3002/api/animals', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(animal),
       });
 
       if (!response.ok) {
-        const errorData = await response.json(); // Attempt to read the error message
+        const errorData = await response.json();
         console.error('Failed to add animal:', errorData);
         throw new Error('Failed to add animal');
       }
 
-      navigate('/admin/animals'); // Redirect to the animal list after successful creation
+      navigate('/admin/animals');
     } catch (error) {
       console.error('Error adding animal:', error);
+      alert(error.message);
     }
   };
 

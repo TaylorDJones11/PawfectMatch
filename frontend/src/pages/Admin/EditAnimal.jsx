@@ -42,10 +42,12 @@ function EditAnimal() {
     e.preventDefault();
 
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch(`http://localhost:3002/api/animals/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(animal),
       });
@@ -54,7 +56,7 @@ function EditAnimal() {
         throw new Error('Failed to update animal');
       }
 
-      navigate('/admin/animals'); // Redirect to the animal list after successful update
+      navigate('/admin/animals');
     } catch (error) {
       console.error('Error updating animal:', error);
     }
