@@ -27,26 +27,39 @@ function AdminAnimalList() {
     }
 
     try {
+      const token = localStorage.getItem('token');
+
+      if (!token) {
+        throw new Error('No token found, please log in again.');
+      }
+
       const response = await fetch(`http://localhost:3002/api/animals/${id}`, {
         method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
+
       if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Failed to delete animal:', errorData);
         throw new Error('Failed to delete');
       }
+
       setAnimals((prev) => prev.filter((animal) => animal._id !== id));
       alert('Animal deleted successfully');
     } catch (error) {
       console.error('Failed to delete animal', error);
+      alert('Error: ' + error.message);
     }
   };
 
   return (
-    <div className='admin-animal-list'>
+    <div className='admin-animal-list '>
       <div className='flex justify-between items-center mb-6'>
-        <h2 className='text-2xl font-semibold'>Animal List</h2>
         <Link
           to='/admin/animals/new'
-          className='bg-orange text-black  px-4 py-2 rounded  transition duration-300'
+          className='bg-orange text-black font-bold  px-4 py-2 rounded  transition duration-300'
         >
           Add New Animal
         </Link>
@@ -72,14 +85,14 @@ function AdminAnimalList() {
             <div className='flex justify-between'>
               <Link
                 to={`/admin/animals/edit/${animal._id}`}
-                className='bg-emerald px-4 py-2 rounded text-black
+                className='bg-emerald  px-4 py-2 rounded text-black
                  hover:underline'
               >
                 Edit
               </Link>
               <button
                 onClick={() => deleteAnimal(animal._id)}
-                className='bg-red px-4 py-2 rounded text-black hover:underline'
+                className='bg-red  px-4 py-2 rounded text-black hover:underline'
               >
                 Delete
               </button>
