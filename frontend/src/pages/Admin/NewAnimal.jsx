@@ -76,10 +76,13 @@ function NewAnimal() {
     <div className='bg-beige min-h-screen w-full'>
       <Logo />
       <div className='max-w-md mx-auto mb-8 bg-white p-8 shadow-md rounded '>
-        <h2 className='text-2xl font-bold mb-4'>Add New Animal</h2>
+        <h2 className='text-2xl text-orange font-bold mb-8'>Add New Animal</h2>
         <form onSubmit={handleSubmit}>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Name</label>
+            <label className='block text-gray-700'>
+              {' '}
+              <b>Name</b>{' '}
+            </label>
             <input
               type='text'
               name='title'
@@ -90,7 +93,9 @@ function NewAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Description</label>
+            <label className='block text-gray-700'>
+              <b>Description</b>
+            </label>
             <textarea
               name='description'
               value={animal.description}
@@ -100,7 +105,9 @@ function NewAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Age</label>
+            <label className='block text-gray-700'>
+              <b>Age</b>
+            </label>
             <input
               type='text'
               name='age'
@@ -111,7 +118,9 @@ function NewAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Gender</label>
+            <label className='block text-gray-700'>
+              <b>Gender</b>
+            </label>
             <input
               type='text'
               name='gender'
@@ -122,7 +131,9 @@ function NewAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Weight</label>
+            <label className='block text-gray-700'>
+              <b>Weight</b>
+            </label>
             <input
               type='text'
               name='weight'
@@ -133,7 +144,9 @@ function NewAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Breed</label>
+            <label className='block text-gray-700'>
+              <b>Breed</b>
+            </label>
             <input
               type='text'
               name='breed'
@@ -144,7 +157,9 @@ function NewAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Photos</label>
+            <label className='block text-gray-700'>
+              <b>Photos</b>
+            </label>
             <input
               type='file'
               name='photos'
@@ -157,15 +172,18 @@ function NewAnimal() {
             <Button
               type='submit'
               child={'Add Animal'}
-              className='bg-emerald text-black px-4 py-2 rounded hover:bg-blue-700 transition duration-300'
+              className='bg-emerald mt-4 text-black px-4 py-2 rounded hover:bg-blue-700 transition duration-300'
             >
               Add Animal
             </Button>
+            <Link to={'/admin/animals'}>
+              <Button
+                className='text-gray-700 mt-5 underline'
+                child={'Cancel'}
+              />
+            </Link>
           </div>
         </form>
-        <Link to={'/admin/animals'}>
-          <Button className='text-gray-700 underline' child={'Cancel'} />
-        </Link>
       </div>
       <Footer />
     </div>
