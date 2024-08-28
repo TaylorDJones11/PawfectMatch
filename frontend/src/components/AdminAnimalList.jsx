@@ -55,19 +55,31 @@ function AdminAnimalList() {
   };
 
   return (
-    <div className='admin-animal-list '>
+    <div className='admin-animal-list'>
       <div className='flex justify-between items-center mb-6'>
         <Link
           to='/admin/animals/new'
-          className='bg-orange text-black font-bold  px-4 py-2 rounded  transition duration-300'
+          className='bg-orange text-black font-bold px-4 py-2 rounded transition duration-300'
         >
           Add New Animal
         </Link>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 '>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {animals.map((animal) => (
           <div key={animal._id} className='bg-white p-4 rounded-lg shadow-md'>
+            {/* Display the first image from the photos array if available */}
+            {animal.photos && animal.photos.length > 0 ? (
+              <img
+                src={animal.photos[0]} // Display the first photo
+                alt={animal.title}
+                className='w-full h-40 object-cover mb-4 rounded'
+              />
+            ) : (
+              <div className='w-full h-40 bg-gray-200 mb-4 rounded flex items-center justify-center'>
+                <span className='text-gray-500'>No Image Available</span>
+              </div>
+            )}
             <h3 className='text-xl font-bold mb-2'>{animal.title}</h3>
             <p className='text-gray-700 mb-4'>{animal.description}</p>
             <p className='text-gray-700 mb-4'>
@@ -85,14 +97,13 @@ function AdminAnimalList() {
             <div className='flex justify-between'>
               <Link
                 to={`/admin/animals/edit/${animal._id}`}
-                className='bg-emerald  px-4 py-2 rounded text-black
-                 hover:underline'
+                className='bg-emerald px-4 py-2 rounded text-black hover:underline'
               >
                 Edit
               </Link>
               <button
                 onClick={() => deleteAnimal(animal._id)}
-                className='bg-red  px-4 py-2 rounded text-black hover:underline'
+                className='bg-red px-4 py-2 rounded text-black hover:underline'
               >
                 Delete
               </button>
