@@ -7,7 +7,9 @@ function AdminAnimalList() {
   useEffect(() => {
     const fetchAnimals = async () => {
       try {
-        const response = await fetch('http://localhost:3002/api/animals');
+        const response = await fetch(
+          'https://pawfectmatch-1pke.onrender.com/api/animals'
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
@@ -33,12 +35,15 @@ function AdminAnimalList() {
         throw new Error('No token found, please log in again.');
       }
 
-      const response = await fetch(`http://localhost:3002/api/animals/${id}`, {
-        method: 'DELETE',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        `https://pawfectmatch-1pke.onrender.com/api/animals/${id}`,
+        {
+          method: 'DELETE',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();

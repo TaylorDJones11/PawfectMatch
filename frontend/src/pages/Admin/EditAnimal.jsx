@@ -19,7 +19,9 @@ function EditAnimal() {
   useEffect(() => {
     const fetchAnimal = async () => {
       try {
-        const response = await fetch(`http://localhost:3002/api/animals/${id}`);
+        const response = await fetch(
+          `https://pawfectmatch-1pke.onrender.com/api/animals/${id}`
+        );
         if (!response.ok) {
           throw new Error('Failed to fetch animal data');
         }
@@ -64,13 +66,16 @@ function EditAnimal() {
         formData.append('photos', photos[i]);
       }
 
-      const response = await fetch(`http://localhost:3002/api/animals/${id}`, {
-        method: 'PUT',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData, // Send the FormData object
-      });
+      const response = await fetch(
+        `https://pawfectmatch-1pke.onrender.com/api/animals/${id}`,
+        {
+          method: 'PUT',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData, // Send the FormData object
+        }
+      );
 
       if (!response.ok) {
         throw new Error('Failed to update animal');

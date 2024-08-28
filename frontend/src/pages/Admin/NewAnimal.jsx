@@ -51,13 +51,16 @@ function NewAnimal() {
         formData.append('photos', photos[i]);
       }
 
-      const response = await fetch('http://localhost:3002/api/animals', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        body: formData, // Send the FormData object
-      });
+      const response = await fetch(
+        'https://pawfectmatch-1pke.onrender.com/api/animals',
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData, // Send the FormData object
+        }
+      );
 
       if (!response.ok) {
         const errorData = await response.json();
