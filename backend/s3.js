@@ -1,4 +1,4 @@
-const { S3Client } = require('@aws-sdk/client-s3');
+const { S3Client, DeleteObjectCommand } = require('@aws-sdk/client-s3');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 
@@ -22,4 +22,8 @@ const upload = multer({
   }),
 });
 
-module.exports = upload;
+module.exports = {
+  upload,
+  s3,
+  DeleteObjectCommand,
+};

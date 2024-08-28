@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Animal = require('../models/Animal');
 const authenticateToken = require('../middleware/authenticateToken');
-const upload = require('../s3');
+const { upload, s3, DeleteObjectCommand } = require('../s3');
 
 // POST route to create a new animal with photos
 router.post(
@@ -93,22 +93,32 @@ router.delete('/animals/:id', authenticateToken, async (req, res) => {
     if (!animal) return res.status(404).json({ error: 'Animal not found' });
 
     // Delete photos from S3
-    await Promise.all(
-      animal.photos.map(async (url) => {
-        const key = url.split('/').pop(); // Extract the file name from the URL
-        await s3
-          .deleteObject({
-            Bucket: 'my-animal-images',
-            Key: key,
-          })
-          .promise();
-      })
-    );
+    if (animal.photos && animal.photos.length > 0) {
+      await Promise.all(
+        animal.photos.map(async (url) => {
+          try {
+            const key = url.split('/').pop(); // Extract the file name from the URL
+            console.log('Attempting to delete S3 object with key:', key); // Debugging log
 
-    // Delete the animal from MongoDB
-    await animal.remove();
+            const command = new DeleteObjectCommand({
+              Bucket: process.env.BUCKET_NAME,
+              Key: key,
+            });
+
+            await s3.send(command);
+          } catch (s3Error) {
+            console.error('Error deleting photo from S3:', s3Error);
+            throw new Error('Failed to delete photo from S3');
+          }
+        })
+      );
+    }
+
+    // Delete the animal from MongoDB using findByIdAndDelete
+    await Animal.findByIdAndDelete(req.params.id);
     res.json({ message: 'Animal and its photos deleted successfully' });
   } catch (error) {
+    console.error('Error deleting animal:', error);
     res.status(500).json({ error: error.message });
   }
 });
