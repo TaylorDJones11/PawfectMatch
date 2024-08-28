@@ -8,13 +8,7 @@ const animalsRouter = require('./routes/animals');
 const authRoutes = require('./routes/auth');
 
 // CORS setup
-const corsOptions = {
-  origin: 'http://localhost:5173', // Your frontend URL
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-  optionsSuccessStatus: 204,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 // Initialize MongoDB connection
 
