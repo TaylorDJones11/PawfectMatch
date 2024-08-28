@@ -38,7 +38,7 @@ function IndividualAnimal() {
 
         <AnimalProfile
           title={animal.title}
-          imageSrc={pic}
+          photos={animal.photos || pic}
           description={animal.description}
           breed={animal.breed}
           age={animal.age}

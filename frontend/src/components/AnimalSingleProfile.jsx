@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import Footer from './Footer';
 
 function AnimalProfile({
   title,
-  imageSrc,
+  photos,
   description,
   breed,
   age,
   gender,
   weight,
 }) {
+  const imageSrc =
+    photos && photos.length > 0 ? photos[0] : '/path/to/default-image.jpg';
   return (
     <div className='flex justify-center mt-12'>
       <div className='bg-white shadow-lg rounded-lg overflow-hidden max-w-md w-full '>
