@@ -8,9 +8,11 @@ function NewAnimal() {
     title: '',
     description: '',
     age: '',
+    gender: '',
     weight: '',
     breed: '',
   });
+  const [photos, setPhotos] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,6 +20,10 @@ function NewAnimal() {
       ...prevAnimal,
       [name]: value,
     }));
+  };
+
+  const handleFileChange = (e) => {
+    setPhotos(e.target.files);
   };
 
   const handleSubmit = async (e) => {
@@ -30,13 +36,25 @@ function NewAnimal() {
         throw new Error('No token found, please log in again.');
       }
 
+      const formData = new FormData();
+      formData.append('title', animal.title);
+      formData.append('description', animal.description);
+      formData.append('age', animal.age);
+      formData.append('weight', animal.weight);
+      formData.append('breed', animal.breed);
+      formData.append('gender', animal.gender);
+
+      // Append each photo to the form data
+      for (let i = 0; i < photos.length; i++) {
+        formData.append('photos', photos[i]);
+      }
+
       const response = await fetch('http://localhost:3002/api/animals', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(animal),
+        body: formData, // Send the FormData object
       });
 
       if (!response.ok) {
@@ -119,6 +137,16 @@ function NewAnimal() {
             onChange={handleChange}
             className='w-full px-3 py-2 border rounded'
             required
+          />
+        </div>
+        <div className='mb-4'>
+          <label className='block text-gray-700'>Photos</label>
+          <input
+            type='file'
+            name='photos'
+            multiple
+            onChange={handleFileChange}
+            className='w-full px-3 py-2 border rounded'
           />
         </div>
         <div className='flex justify-between'>

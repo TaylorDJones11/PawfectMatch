@@ -6,15 +6,16 @@ const animalSchema = new mongoose.Schema({
   age: { type: Number, required: true },
   gender: { type: String, required: true },
   weight: { type: Number, required: true, min: 0 },
-  imageSrc: {
-    type: String,
+  photos: {
+    type: [String], // Array of strings to store multiple image URLs
     validate: {
       validator: function (v) {
-        return /^https?:\/\/.+\.(jpg|jpeg|png|gif)$/.test(v); // Basic regex for URL validation
+        return v.every((url) =>
+          /^https?:\/\/.+\.(jpg|jpeg|png|gif)$/.test(url)
+        );
       },
-      message: (props) => `${props.value} is not a valid image URL!`,
+      message: (props) => `One or more image URLs are not valid!`,
     },
-    // : [true, 'Animal image URL required'],
   },
   description: { type: String, required: true, minlength: 10, maxlength: 500 },
 });

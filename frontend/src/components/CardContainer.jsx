@@ -13,6 +13,7 @@ function CardContainer() {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const data = await response.json();
+        console.log(data); // Log the fetched animals
         setAnimals(data);
       } catch (error) {
         console.error('Error fetching animals:', error);
@@ -26,21 +27,27 @@ function CardContainer() {
     <>
       <div className='p-4'>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
-          {animals.map((animal) => (
-            <Card
-              key={animal._id}
-              title={animal.title}
-              imageSrc={picture}
-              description={animal.description}
-              buttonText='Learn More'
-              adoptText='Adopt'
-              buttonLink={`/animal/${animal._id}`}
-              adoptLink={`/adoptionform`}
-            />
-          ))}
+          {animals.map((animal) => {
+            const imageSrc =
+              animal.photos.length > 0 ? animal.photos[0] : picture;
+            console.log('Image source:', imageSrc); // Debugging line
+            return (
+              <Card
+                key={animal._id}
+                title={animal.title}
+                imageSrc={imageSrc}
+                description={animal.description}
+                buttonText='Learn More'
+                adoptText='Adopt'
+                buttonLink={`/animal/${animal._id}`}
+                adoptLink={`/adoptionform`}
+              />
+            );
+          })}
         </div>
       </div>
     </>
   );
 }
+
 export default CardContainer;

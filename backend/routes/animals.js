@@ -11,13 +11,14 @@ router.post(
   upload.array('photos', 10),
   async (req, res) => {
     try {
-      const photos = req.files.map((file) => file.location); // Get S3 URLs
-      const { name, description, age, weight, breed } = req.body;
+      const photos = req.files.map((file) => file.location);
+      const { title, description, age, gender, weight, breed } = req.body;
 
       const newAnimal = new Animal({
-        name,
+        title,
         description,
         age,
+        gender,
         weight,
         breed,
         photos, // Store S3 URLs in MongoDB
@@ -62,14 +63,15 @@ router.put(
   async (req, res) => {
     try {
       const photos = req.files.map((file) => file.location); // Get new S3 URLs
-      const { name, description, age, weight, breed } = req.body;
+      const { title, description, gender, age, weight, breed } = req.body;
 
       const updatedAnimal = await Animal.findByIdAndUpdate(
         req.params.id,
         {
-          name,
+          title,
           description,
           age,
+          gender,
           weight,
           breed,
           $push: { photos: { $each: photos } }, // Add new photos to the existing array

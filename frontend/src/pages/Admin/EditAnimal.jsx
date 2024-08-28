@@ -12,6 +12,7 @@ function EditAnimal() {
     weight: '',
     breed: '',
   });
+  const [photos, setPhotos] = useState([]); // State for new photos
 
   useEffect(() => {
     const fetchAnimal = async () => {
@@ -38,18 +39,35 @@ function EditAnimal() {
     }));
   };
 
+  const handleFileChange = (e) => {
+    setPhotos(e.target.files); // Set the selected files
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const token = localStorage.getItem('token');
+
+      const formData = new FormData();
+      formData.append('title', animal.title);
+      formData.append('description', animal.description);
+      formData.append('age', animal.age);
+      formData.append('gender', animal.gender);
+      formData.append('weight', animal.weight);
+      formData.append('breed', animal.breed);
+
+      // Append each new photo to the form data
+      for (let i = 0; i < photos.length; i++) {
+        formData.append('photos', photos[i]);
+      }
+
       const response = await fetch(`http://localhost:3002/api/animals/${id}`, {
         method: 'PUT',
         headers: {
-          'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(animal),
+        body: formData, // Send the FormData object
       });
 
       if (!response.ok) {
@@ -59,6 +77,7 @@ function EditAnimal() {
       navigate('/admin/animals');
     } catch (error) {
       console.error('Error updating animal:', error);
+      alert(error.message);
     }
   };
 
@@ -118,6 +137,16 @@ function EditAnimal() {
             onChange={handleChange}
             className='w-full px-3 py-2 border rounded'
             required
+          />
+        </div>
+        <div className='mb-4'>
+          <label className='block text-gray-700'>Add More Photos</label>
+          <input
+            type='file'
+            name='photos'
+            multiple
+            onChange={handleFileChange}
+            className='w-full px-3 py-2 border rounded'
           />
         </div>
         <div className='flex justify-between'>
