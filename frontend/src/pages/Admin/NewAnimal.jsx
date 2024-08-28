@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
+import Logo from '../../components/Logo';
+import Footer from '../../components/Footer';
 
 function NewAnimal() {
   const navigate = useNavigate();
@@ -72,11 +74,12 @@ function NewAnimal() {
 
   return (
     <div className='bg-beige min-h-screen w-full'>
-      <div className='max-w-md mx-auto bg-white p-8 shadow-md rounded '>
+      <Logo />
+      <div className='max-w-md mx-auto mb-8 bg-white p-8 shadow-md rounded '>
         <h2 className='text-2xl font-bold mb-4'>Add New Animal</h2>
         <form onSubmit={handleSubmit}>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Title</label>
+            <label className='block text-gray-700'>Name</label>
             <input
               type='text'
               name='title'
@@ -164,6 +167,7 @@ function NewAnimal() {
           <Button className='text-gray-700 underline' child={'Cancel'} />
         </Link>
       </div>
+      <Footer />
     </div>
   );
 }

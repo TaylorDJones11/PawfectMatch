@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import Button from '../../components/Button';
+import Logo from '../../components/Logo';
+import Footer from '../../components/Footer';
 
 function EditAnimal() {
   const { id } = useParams();
@@ -83,11 +85,14 @@ function EditAnimal() {
 
   return (
     <div className='bg-beige min-h-screen w-full'>
-      <div className='max-w-md mx-auto bg-white p-8 shadow-md rounded'>
-        <h2 className='text-2xl font-bold mb-4'>Edit Animal</h2>
+      <Logo />
+      <div className='max-w-md mx-auto mb-8  bg-white p-8 shadow-md rounded'>
+        <h2 className='text-2xl text-orange font-bold mb-6'>Edit Animal</h2>
         <form onSubmit={handleSubmit}>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Title</label>
+            <label className='block text-gray-700'>
+              <b>Name</b>
+            </label>
             <input
               type='text'
               name='title'
@@ -98,7 +103,10 @@ function EditAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Description</label>
+            <label className='block text-gray-700'>
+              {' '}
+              <b>Description</b>{' '}
+            </label>
             <textarea
               name='description'
               value={animal.description}
@@ -108,7 +116,9 @@ function EditAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Age</label>
+            <label className='block text-gray-700'>
+              <b>Age</b>
+            </label>
             <input
               type='text'
               name='age'
@@ -119,7 +129,9 @@ function EditAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Weight</label>
+            <label className='block text-gray-700'>
+              <b>Weight</b>
+            </label>
             <input
               type='text'
               name='weight'
@@ -130,7 +142,9 @@ function EditAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Breed</label>
+            <label className='block text-gray-700'>
+              <b>Breed</b>
+            </label>
             <input
               type='text'
               name='breed'
@@ -141,7 +155,9 @@ function EditAnimal() {
             />
           </div>
           <div className='mb-4'>
-            <label className='block text-gray-700'>Add More Photos</label>
+            <label className='block text-gray-700'>
+              <b>Update Photo</b>
+            </label>
             <input
               type='file'
               name='photos'
@@ -154,18 +170,19 @@ function EditAnimal() {
             <Button
               type='submit'
               child={'Save Changes'}
-              className='bg-emerald text-black px-4 py-2 rounded hover:bg-blue-700 transition duration-300'
+              className='bg-emerald text-black mt-4 px-4 py-2 rounded hover:bg-blue-700 transition duration-300'
             >
               Save Changes
             </Button>
             <Link to='/admin/animals'>
-              <Button className='text-gray-700 underline' child={'Cancel'}>
+              <Button className='text-gray-700 mt-5 underline' child={'Cancel'}>
                 Cancel
               </Button>
             </Link>
           </div>
         </form>
       </div>
+      <Footer />
     </div>
   );
 }

@@ -74,10 +74,10 @@ function AdminAnimalList() {
               <b>Breed:</b> {animal.breed}
             </p>
             <p className='text-gray-700 mb-4'>
-              <b>Weight:</b> {animal.weight}
+              <b>Weight:</b> {animal.weight} lbs
             </p>
             <p className='text-gray-700 mb-4'>
-              <b>Age:</b> {animal.age}
+              <b>Age:</b> {animal.age} year(s)
             </p>
             <p className='text-gray-700 mb-4'>
               <b>Gender:</b> {animal.gender}
