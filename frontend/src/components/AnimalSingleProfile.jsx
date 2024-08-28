@@ -16,7 +16,11 @@ function AnimalProfile({
   return (
     <div className='flex justify-center mt-12'>
       <div className='bg-white shadow-lg rounded-lg overflow-hidden max-w-md w-full '>
-        <img src={imageSrc} alt={title} className='w-full h-52 object-cover' />
+        <img
+          src={imageSrc}
+          alt={title}
+          className='w-full h-52 object-contain'
+        />
         <div className='p-4'>
           <Link to='/adopt'>
             <FontAwesomeIcon

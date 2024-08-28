@@ -30,7 +30,7 @@ function CardContainer() {
           {animals.map((animal) => {
             const imageSrc =
               animal.photos.length > 0 ? animal.photos[0] : picture;
-            console.log('Image source:', imageSrc); // Debugging line
+
             return (
               <Card
                 key={animal._id}

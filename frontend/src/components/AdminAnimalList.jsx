@@ -73,7 +73,7 @@ function AdminAnimalList() {
               <img
                 src={animal.photos[0]} // Display the first photo
                 alt={animal.title}
-                className='w-full h-40 object-cover mb-4 rounded'
+                className='w-full h-40 object-contain mb-4 rounded'
               />
             ) : (
               <div className='w-full h-40 bg-gray-200 mb-4 rounded flex items-center justify-center'>
