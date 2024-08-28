@@ -5,7 +5,7 @@ import NavbarContainer from '../../components/NavbarContainer';
 function AdoptionForm() {
   return (
     <>
-      <div className='animal-container f-screen'>
+      <div className='bg-beige min-h-screen w-full'>
         <NavbarContainer />
         <AdoptionInquiryForm />
         <Footer />

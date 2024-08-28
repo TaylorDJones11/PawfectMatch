@@ -71,97 +71,99 @@ function NewAnimal() {
   };
 
   return (
-    <div className='max-w-md mx-auto bg-white p-8 shadow-md rounded'>
-      <h2 className='text-2xl font-bold mb-4'>Add New Animal</h2>
-      <form onSubmit={handleSubmit}>
-        <div className='mb-4'>
-          <label className='block text-gray-700'>Title</label>
-          <input
-            type='text'
-            name='title'
-            value={animal.title}
-            onChange={handleChange}
-            className='w-full px-3 py-2 border rounded'
-            required
-          />
-        </div>
-        <div className='mb-4'>
-          <label className='block text-gray-700'>Description</label>
-          <textarea
-            name='description'
-            value={animal.description}
-            onChange={handleChange}
-            className='w-full px-3 py-2 border rounded'
-            required
-          />
-        </div>
-        <div className='mb-4'>
-          <label className='block text-gray-700'>Age</label>
-          <input
-            type='text'
-            name='age'
-            value={animal.age}
-            onChange={handleChange}
-            className='w-full px-3 py-2 border rounded'
-            required
-          />
-        </div>
-        <div className='mb-4'>
-          <label className='block text-gray-700'>Gender</label>
-          <input
-            type='text'
-            name='gender'
-            value={animal.gender}
-            onChange={handleChange}
-            className='w-full px-3 py-2 border rounded'
-            required
-          />
-        </div>
-        <div className='mb-4'>
-          <label className='block text-gray-700'>Weight</label>
-          <input
-            type='text'
-            name='weight'
-            value={animal.weight}
-            onChange={handleChange}
-            className='w-full px-3 py-2 border rounded'
-            required
-          />
-        </div>
-        <div className='mb-4'>
-          <label className='block text-gray-700'>Breed</label>
-          <input
-            type='text'
-            name='breed'
-            value={animal.breed}
-            onChange={handleChange}
-            className='w-full px-3 py-2 border rounded'
-            required
-          />
-        </div>
-        <div className='mb-4'>
-          <label className='block text-gray-700'>Photos</label>
-          <input
-            type='file'
-            name='photos'
-            multiple
-            onChange={handleFileChange}
-            className='w-full px-3 py-2 border rounded'
-          />
-        </div>
-        <div className='flex justify-between'>
-          <Button
-            type='submit'
-            child={'Add Animal'}
-            className='bg-emerald text-black px-4 py-2 rounded hover:bg-blue-700 transition duration-300'
-          >
-            Add Animal
-          </Button>
-        </div>
-      </form>
-      <Link to={'/admin/animals'}>
-        <Button className='text-gray-700 underline' child={'Cancel'} />
-      </Link>
+    <div className='bg-beige min-h-screen w-full'>
+      <div className='max-w-md mx-auto bg-white p-8 shadow-md rounded '>
+        <h2 className='text-2xl font-bold mb-4'>Add New Animal</h2>
+        <form onSubmit={handleSubmit}>
+          <div className='mb-4'>
+            <label className='block text-gray-700'>Title</label>
+            <input
+              type='text'
+              name='title'
+              value={animal.title}
+              onChange={handleChange}
+              className='w-full px-3 py-2 border rounded'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label className='block text-gray-700'>Description</label>
+            <textarea
+              name='description'
+              value={animal.description}
+              onChange={handleChange}
+              className='w-full px-3 py-2 border rounded'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label className='block text-gray-700'>Age</label>
+            <input
+              type='text'
+              name='age'
+              value={animal.age}
+              onChange={handleChange}
+              className='w-full px-3 py-2 border rounded'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label className='block text-gray-700'>Gender</label>
+            <input
+              type='text'
+              name='gender'
+              value={animal.gender}
+              onChange={handleChange}
+              className='w-full px-3 py-2 border rounded'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label className='block text-gray-700'>Weight</label>
+            <input
+              type='text'
+              name='weight'
+              value={animal.weight}
+              onChange={handleChange}
+              className='w-full px-3 py-2 border rounded'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label className='block text-gray-700'>Breed</label>
+            <input
+              type='text'
+              name='breed'
+              value={animal.breed}
+              onChange={handleChange}
+              className='w-full px-3 py-2 border rounded'
+              required
+            />
+          </div>
+          <div className='mb-4'>
+            <label className='block text-gray-700'>Photos</label>
+            <input
+              type='file'
+              name='photos'
+              multiple
+              onChange={handleFileChange}
+              className='w-full px-3 py-2 border rounded'
+            />
+          </div>
+          <div className='flex justify-between'>
+            <Button
+              type='submit'
+              child={'Add Animal'}
+              className='bg-emerald text-black px-4 py-2 rounded hover:bg-blue-700 transition duration-300'
+            >
+              Add Animal
+            </Button>
+          </div>
+        </form>
+        <Link to={'/admin/animals'}>
+          <Button className='text-gray-700 underline' child={'Cancel'} />
+        </Link>
+      </div>
     </div>
   );
 }

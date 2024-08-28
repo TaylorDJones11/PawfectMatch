@@ -5,7 +5,7 @@ import DonationForm from '../../components/DonationForm';
 function DonationPage() {
   return (
     <>
-      <div className='donation-container f-screen'>
+      <div className='bg-beige min-h-screen w-full'>
         <NavbarContainer />
 
         <h1 className='text-center text-2xl mb-16'>

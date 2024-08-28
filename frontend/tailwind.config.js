@@ -11,7 +11,7 @@ export default {
       emerald: '#ddf1cf',
       midnight: '#121063',
       metal: '#6f899a',
-      tahiti: '#3ab7bf',
+      beige: 'rgb(251, 248, 243)',
       red: '#AB1C1C',
     },
   },

@@ -40,11 +40,3 @@ body {
   opacity: 0.7; /* Adjust the opacity here */
   z-index: -1; /* Keep the background behind content */
 }
-
-.adoption-container,
-.donation-container,
-.about-container,
-.login-container,
-.animal-container {
-  background-color: rgb(251, 248, 243);
-}

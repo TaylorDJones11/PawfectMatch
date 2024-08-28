@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 function AdoptionPage() {
   return (
     <>
-      <div className='adoption-container f-screen'>
+      <div className='bg-beige min-h-screen w-full'>
         <div>
           <NavbarContainer />
 

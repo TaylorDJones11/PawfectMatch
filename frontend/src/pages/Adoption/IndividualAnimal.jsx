@@ -33,18 +33,20 @@ function IndividualAnimal() {
 
   return (
     <>
-      <NavbarContainer />
+      <div className='bg-beige min-h-screen w-full'>
+        <NavbarContainer />
 
-      <AnimalProfile
-        title={animal.title}
-        imageSrc={pic}
-        description={animal.description}
-        breed={animal.breed}
-        age={animal.age}
-        gender={animal.gender}
-        weight={animal.weight}
-      />
-      <Footer />
+        <AnimalProfile
+          title={animal.title}
+          imageSrc={pic}
+          description={animal.description}
+          breed={animal.breed}
+          age={animal.age}
+          gender={animal.gender}
+          weight={animal.weight}
+        />
+        <Footer />
+      </div>
     </>
   );
 }
